@@ -11,28 +11,45 @@
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, 
-              hsl(180, 50%, 15%) 0%, 
-              hsl(174, 60%, 20%) 25%,
-              hsl(170, 55%, 18%) 50%,
-              hsl(176, 65%, 22%) 75%,
-              hsl(180, 50%, 17%) 100%
+              hsl(174, 60%, 85%) 0%, 
+              hsl(180, 55%, 88%) 25%,
+              hsl(176, 50%, 82%) 50%,
+              hsl(178, 55%, 86%) 75%,
+              hsl(174, 60%, 84%) 100%
             );
             background-attachment: fixed;
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
         }
+        
+        .gold-text {
+            color: #d4a843;
+            text-shadow: 
+              1px 1px 0 #b8922e,
+              2px 2px 0 #9a7a26,
+              3px 3px 2px rgba(0,0,0,0.2),
+              0 0 10px rgba(212,168,67,0.3);
+        }
+        
+        .gold-text-light {
+            color: #c9a227;
+            text-shadow: 
+              1px 1px 0 #a68721,
+              0 0 8px rgba(201,162,39,0.2);
+        }
+        
         ::-webkit-scrollbar {
           width: 8px;
         }
         ::-webkit-scrollbar-track {
-          background: hsl(174, 40%, 15%);
+          background: hsl(174, 40%, 90%);
         }
         ::-webkit-scrollbar-thumb {
-          background: hsl(174, 50%, 35%);
+          background: hsl(174, 50%, 60%);
           border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-          background: hsl(174, 60%, 45%);
+          background: hsl(174, 60%, 50%);
         }
     </style>
 <script type="importmap">

@@ -18,13 +18,13 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, setActiveView }) 
 
   return (
     <div className="min-h-screen">
-      <header className="bg-gradient-to-r from-teal-700 via-teal-600 to-cyan-600 border-b border-teal-500/30 sticky top-0 z-50 shadow-lg">
+      <header className="bg-white/90 backdrop-blur-sm border-b border-teal-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-4">
-          <h1 className="text-xl font-bold text-white tracking-tight">Свобода от стресса</h1>
+          <h1 className="text-xl font-bold gold-text tracking-tight">Свобода от стресса</h1>
         </div>
       </header>
       
-      <nav className="bg-gradient-to-r from-teal-800/80 via-teal-700/80 to-cyan-700/80 backdrop-blur-sm border-b border-teal-500/20">
+      <nav className="bg-white/80 backdrop-blur-sm border-b border-teal-200">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex gap-1 overflow-x-auto">
             {navItems.map(item => (
@@ -33,8 +33,8 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, setActiveView }) 
                 onClick={() => setActiveView(item.view)}
                 className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors ${
                   activeView === item.view 
-                    ? 'text-white border-b-2 border-white' 
-                    : 'text-teal-100/70 hover:text-white'
+                    ? 'gold-text border-b-2 border-amber-500' 
+                    : 'text-teal-600 hover:text-amber-600'
                 }`}
               >
                 <span className="mr-2">{item.icon}</span>
