@@ -1,4 +1,5 @@
 import React from 'react';
+import { User, Send, ExternalLink } from 'lucide-react';
 import { EXPERT_INFO, EFT_DESCRIPTION } from '../constants';
 
 const ExpertProfile: React.FC = () => {
@@ -6,8 +7,8 @@ const ExpertProfile: React.FC = () => {
     <div className="space-y-8">
       <div className="bg-white/90 backdrop-blur-sm rounded-2xl border border-teal-200 p-8 shadow-lg">
         <div className="flex items-start gap-6">
-          <div className="w-24 h-24 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center text-4xl border-2 border-amber-300 shadow-md">
-            👤
+          <div className="w-24 h-24 bg-gradient-to-br from-amber-100 to-amber-200 rounded-full flex items-center justify-center border-2 border-amber-300 shadow-md">
+            <User className="icon-pulse text-amber-500" size={48} />
           </div>
           <div>
             <h1 className="text-2xl font-bold gold-text">{EXPERT_INFO.name}</h1>
@@ -19,16 +20,18 @@ const ExpertProfile: React.FC = () => {
                 href={EXPERT_INFO.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-lg text-sm font-medium hover:from-amber-400 hover:to-amber-500 transition-all shadow-lg"
+                className="px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-lg text-sm font-medium hover:from-amber-400 hover:to-amber-500 transition-all shadow-lg flex items-center gap-2"
               >
+                <Send size={16} />
                 Telegram
               </a>
               <a
                 href={EXPERT_INFO.channelLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 border border-amber-400 gold-text-light rounded-lg text-sm font-medium hover:bg-amber-50 transition-all"
+                className="px-4 py-2 border border-amber-400 gold-text-light rounded-lg text-sm font-medium hover:bg-amber-50 transition-all flex items-center gap-2"
               >
+                <ExternalLink size={16} />
                 Канал
               </a>
             </div>

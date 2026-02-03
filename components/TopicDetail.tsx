@@ -1,10 +1,19 @@
 import React from 'react';
+import { ArrowLeft, Compass, Scale, Diamond, Clock, PenTool } from 'lucide-react';
 import { MentalHealthTopic } from '../types';
 
 interface TopicDetailProps {
   topic: MentalHealthTopic;
   onBack: () => void;
 }
+
+const topicIcons: Record<string, React.ReactNode> = {
+  'anxiety': <Compass className="icon-float" size={48} />,
+  'burnout': <Scale className="icon-pulse" size={48} />,
+  'stress': <Diamond className="icon-spin" size={48} />,
+  'fatigue': <Clock className="icon-bounce" size={48} />,
+  'self-understanding': <PenTool className="icon-float" size={48} />,
+};
 
 const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
   return (
@@ -13,12 +22,15 @@ const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
         onClick={onBack}
         className="gold-text-light hover:text-amber-600 flex items-center gap-2 font-medium transition-colors"
       >
-        ← Назад
+        <ArrowLeft size={18} />
+        Назад
       </button>
 
       <div className="bg-white/90 backdrop-blur-sm rounded-2xl border border-teal-200 p-8 shadow-lg">
         <div className="flex items-center gap-4 mb-6">
-          <span className="text-5xl">{topic.icon}</span>
+          <div className="text-amber-500">
+            {topicIcons[topic.id] || <Diamond className="icon-float" size={48} />}
+          </div>
           <div>
             <h1 className="text-2xl font-bold gold-text">{topic.title}</h1>
             <p className="gold-text-light">{topic.description}</p>

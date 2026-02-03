@@ -1,4 +1,5 @@
 import React from 'react';
+import { MessageCircle, Dumbbell, Archive, User, Compass, Scale, Diamond, Clock, PenTool, BarChart3 } from 'lucide-react';
 import { AppView, MentalHealthTopic } from '../types';
 import { TOPICS } from '../constants';
 
@@ -6,6 +7,15 @@ interface DashboardProps {
   onTopicSelect: (topic: MentalHealthTopic) => void;
   onNavigate: (view: AppView) => void;
 }
+
+const topicIcons: Record<string, React.ReactNode> = {
+  'anxiety': <Compass className="icon-float" size={32} />,
+  'burnout': <Scale className="icon-pulse" size={32} />,
+  'stress': <Diamond className="icon-spin" size={32} />,
+  'fatigue': <Clock className="icon-bounce" size={32} />,
+  'self-understanding': <PenTool className="icon-float" size={32} />,
+  'stress-test': <BarChart3 className="icon-pulse" size={32} />,
+};
 
 const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
   return (
@@ -22,30 +32,30 @@ const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <button
             onClick={() => onNavigate(AppView.CHAT)}
-            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md"
+            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <span className="text-3xl mb-2 block">💬</span>
+            <MessageCircle className="mx-auto mb-2 icon-float text-amber-500" size={32} />
             <span className="text-sm font-medium gold-text-light">Консультация</span>
           </button>
           <button
             onClick={() => onNavigate(AppView.EXERCISES)}
-            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md"
+            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <span className="text-3xl mb-2 block">🧘</span>
+            <Dumbbell className="mx-auto mb-2 icon-pulse text-amber-500" size={32} />
             <span className="text-sm font-medium gold-text-light">Упражнения</span>
           </button>
           <button
             onClick={() => onNavigate(AppView.EDUCATION)}
-            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md"
+            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <span className="text-3xl mb-2 block">📚</span>
+            <Archive className="mx-auto mb-2 icon-bounce text-amber-500" size={32} />
             <span className="text-sm font-medium gold-text-light">Архив</span>
           </button>
           <button
             onClick={() => onNavigate(AppView.EXPERT)}
-            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md"
+            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <span className="text-3xl mb-2 block">👤</span>
+            <User className="mx-auto mb-2 icon-spin text-amber-500" size={32} />
             <span className="text-sm font-medium gold-text-light">Эксперт</span>
           </button>
         </div>
@@ -60,7 +70,9 @@ const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
               onClick={() => onTopicSelect(topic)}
               className="bg-white/90 backdrop-blur-sm p-5 rounded-xl border border-teal-200 flex items-center gap-4 cursor-pointer hover:border-amber-400 hover:shadow-lg transition-all shadow-md"
             >
-              <span className="text-3xl">{topic.icon}</span>
+              <div className="text-amber-500">
+                {topicIcons[topic.id] || <Diamond className="icon-float" size={32} />}
+              </div>
               <div>
                 <h4 className="font-semibold gold-text">{topic.title}</h4>
                 <p className="text-sm gold-text-light">{topic.description}</p>

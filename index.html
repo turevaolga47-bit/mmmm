@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Свобода от стресса — Ольга Турьева</title>
+    <title>Выход из стресса за 5 минут</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
@@ -36,6 +36,42 @@
             text-shadow: 
               1px 1px 0 #a68721,
               0 0 8px rgba(201,162,39,0.2);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(212,168,67,0.3)); }
+            50% { transform: scale(1.1); filter: drop-shadow(0 0 8px rgba(212,168,67,0.6)); }
+        }
+        
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes bounce-soft {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .icon-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .icon-pulse {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .icon-spin {
+            animation: spin-slow 8s linear infinite;
+        }
+        
+        .icon-bounce {
+            animation: bounce-soft 1.5s ease-in-out infinite;
         }
         
         ::-webkit-scrollbar {
