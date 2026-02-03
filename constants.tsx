@@ -6,7 +6,7 @@ export const EXPERT_INFO = {
   title: "Кризисный психолог, доктор философии",
   experience: "34 года практики",
   telegram: "https://t.me/olga_turyeva", 
-  channelLink: "https://t.me/female_energy_secrets",
+  channelLink: "https://t.me/+X6SAWEgppy9lYmMy",
   clubName: "Закрытый женский клуб: От А до Я",
   clubDescription: "Уникальное пространство для женщин. Встречи 4 раза в месяц. Каждая сессия — индивидуальная работа по вашему запросу. Мы проходим путь трансформации вместе."
 };
