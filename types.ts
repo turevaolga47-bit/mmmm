@@ -1,4 +1,20 @@
 
+export interface MentalHealthTopic {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  symptoms: string[];
+  strategies: string[];
+  tappingScript?: {
+    id: string;
+    title: string;
+    setupPhrase: string;
+    rounds: string[];
+  };
+  isTest?: boolean;
+}
+
 export enum AppView {
   DASHBOARD = 'DASHBOARD',
   CHAT = 'CHAT',
