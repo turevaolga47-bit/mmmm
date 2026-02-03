@@ -1,5 +1,14 @@
 import React from 'react';
+import { Compass, Scale, Diamond, Clock, PenTool } from 'lucide-react';
 import { TOPICS } from '../constants';
+
+const topicIcons: Record<string, React.ReactNode> = {
+  'anxiety': <Compass className="icon-float" size={32} />,
+  'burnout': <Scale className="icon-pulse" size={32} />,
+  'stress': <Diamond className="icon-spin" size={32} />,
+  'fatigue': <Clock className="icon-bounce" size={32} />,
+  'self-understanding': <PenTool className="icon-float" size={32} />,
+};
 
 const Exercises: React.FC = () => {
   return (
@@ -15,7 +24,9 @@ const Exercises: React.FC = () => {
         {TOPICS.filter(t => t.tappingScript).map(topic => (
           <div key={topic.id} className="bg-white/90 backdrop-blur-sm rounded-xl border border-teal-200 overflow-hidden shadow-md">
             <div className="p-5 flex items-center gap-4">
-              <span className="text-3xl">{topic.icon}</span>
+              <div className="text-amber-500">
+                {topicIcons[topic.id] || <Diamond className="icon-float" size={32} />}
+              </div>
               <div className="flex-1">
                 <h3 className="font-semibold gold-text">{topic.tappingScript?.title}</h3>
                 <p className="text-sm gold-text-light mt-1">{topic.description}</p>

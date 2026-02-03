@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Send } from 'lucide-react';
 import { ChatMessage } from '../types';
 
 const Assistant: React.FC = () => {
@@ -74,8 +75,9 @@ const Assistant: React.FC = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-xl font-medium hover:from-amber-400 hover:to-amber-500 disabled:opacity-50 transition-all shadow-lg"
+            className="px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-xl font-medium hover:from-amber-400 hover:to-amber-500 disabled:opacity-50 transition-all shadow-lg flex items-center gap-2"
           >
+            <Send size={18} />
             Отправить
           </button>
         </div>
