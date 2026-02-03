@@ -6,20 +6,28 @@ import Assistant from './components/Assistant';
 import Exercises from './components/Exercises';
 import TopicDetail from './components/TopicDetail';
 import ExpertProfile from './components/ExpertProfile';
+import StressTest from './components/StressTest';
 import { AppView, MentalHealthTopic } from './types';
 import { TOPICS } from './constants';
 
 const App: React.FC = () => {
   const [activeView, setActiveView] = useState<AppView>(AppView.DASHBOARD);
   const [selectedTopic, setSelectedTopic] = useState<MentalHealthTopic | null>(null);
+  const [showStressTest, setShowStressTest] = useState(false);
 
   const handleTopicSelect = (topic: MentalHealthTopic) => {
-    setSelectedTopic(topic);
-    setActiveView(AppView.EDUCATION);
+    if (topic.isTest) {
+      setShowStressTest(true);
+      setActiveView(AppView.EDUCATION);
+    } else {
+      setSelectedTopic(topic);
+      setActiveView(AppView.EDUCATION);
+    }
   };
 
   const handleBackToDashboard = () => {
     setSelectedTopic(null);
+    setShowStressTest(false);
     setActiveView(AppView.DASHBOARD);
   };
 
@@ -28,9 +36,6 @@ const App: React.FC = () => {
       case AppView.DASHBOARD:
         return (
           <div>
-            <div className="mb-6 p-4 bg-slate-100 border border-slate-300 rounded-lg text-center">
-              <p className="text-slate-800 font-medium">✓ Проект успешно запущен</p>
-            </div>
             <Dashboard onTopicSelect={handleTopicSelect} onNavigate={setActiveView} />
           </div>
         );
@@ -41,6 +46,9 @@ const App: React.FC = () => {
       case AppView.EXPERT:
         return <ExpertProfile />;
       case AppView.EDUCATION:
+        if (showStressTest) {
+          return <StressTest onBack={handleBackToDashboard} />;
+        }
         if (selectedTopic) {
           return <TopicDetail topic={selectedTopic} onBack={handleBackToDashboard} />;
         }
@@ -78,7 +86,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <Layout activeView={activeView} setActiveView={(v) => { setActiveView(v); setSelectedTopic(null); }}>
+    <Layout activeView={activeView} setActiveView={(v) => { setActiveView(v); setSelectedTopic(null); setShowStressTest(false); }}>
       {renderContent()}
     </Layout>
   );

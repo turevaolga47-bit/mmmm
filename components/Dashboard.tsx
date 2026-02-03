@@ -54,7 +54,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
       <section>
         <h3 className="text-lg font-semibold text-slate-900 mb-4">Темы для проработки</h3>
         <div className="grid gap-4">
-          {TOPICS.slice(0, 3).map(topic => (
+          {TOPICS.slice(0, 4).map(topic => (
             <div
               key={topic.id}
               onClick={() => onTopicSelect(topic)}
