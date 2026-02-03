@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Compass, Scale, Diamond, Clock, PenTool } from 'lucide-react';
+import { ArrowLeft, Compass, Zap, Brain, Sun, Sparkles, Gem } from 'lucide-react';
 import { MentalHealthTopic } from '../types';
 
 interface TopicDetailProps {
@@ -7,15 +7,35 @@ interface TopicDetailProps {
   onBack: () => void;
 }
 
-const topicIcons: Record<string, React.ReactNode> = {
-  'anxiety': <Compass className="icon-float text-teal-500" size={48} strokeWidth={2.5} />,
-  'burnout': <Scale className="icon-pulse text-teal-500" size={48} strokeWidth={2.5} />,
-  'stress': <Diamond className="icon-spin text-teal-500" size={48} strokeWidth={2.5} />,
-  'fatigue': <Clock className="icon-bounce text-teal-500" size={48} strokeWidth={2.5} />,
-  'self-understanding': <PenTool className="icon-float text-teal-500" size={48} strokeWidth={2.5} />,
+const topicIcons: Record<string, { icon: React.ReactNode; bgColor: string }> = {
+  'anxiety': { 
+    icon: <Compass className="icon-float" size={48} strokeWidth={2.5} />, 
+    bgColor: 'bg-gradient-to-br from-purple-100 to-indigo-100 text-purple-500' 
+  },
+  'burnout': { 
+    icon: <Zap className="icon-pulse" size={48} strokeWidth={2.5} />, 
+    bgColor: 'bg-gradient-to-br from-orange-100 to-amber-100 text-orange-500' 
+  },
+  'stress': { 
+    icon: <Brain className="icon-spin" size={48} strokeWidth={2.5} />, 
+    bgColor: 'bg-gradient-to-br from-red-100 to-pink-100 text-red-500' 
+  },
+  'fatigue': { 
+    icon: <Sun className="icon-bounce" size={48} strokeWidth={2.5} />, 
+    bgColor: 'bg-gradient-to-br from-yellow-100 to-amber-100 text-yellow-600' 
+  },
+  'self-understanding': { 
+    icon: <Sparkles className="icon-float" size={48} strokeWidth={2.5} />, 
+    bgColor: 'bg-gradient-to-br from-pink-100 to-rose-100 text-pink-500' 
+  },
 };
 
 const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
+  const iconData = topicIcons[topic.id] || { 
+    icon: <Gem className="icon-float" size={48} strokeWidth={2.5} />, 
+    bgColor: 'bg-gradient-to-br from-teal-100 to-cyan-100 text-teal-500' 
+  };
+
   return (
     <div className="space-y-6">
       <button
@@ -28,8 +48,8 @@ const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
 
       <div className="bg-white rounded-2xl border border-teal-100 p-8 shadow-lg">
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full flex items-center justify-center shadow-sm">
-            {topicIcons[topic.id] || <Diamond className="icon-float text-teal-500" size={48} strokeWidth={2.5} />}
+          <div className={`w-16 h-16 rounded-full flex items-center justify-center shadow-sm ${iconData.bgColor}`}>
+            {iconData.icon}
           </div>
           <div>
             <h1 className="text-2xl font-bold teal-text">{topic.title}</h1>
