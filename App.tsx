@@ -53,19 +53,24 @@ const App: React.FC = () => {
           return <TopicDetail topic={selectedTopic} onBack={handleBackToDashboard} />;
         }
         return (
-          <div className="space-y-10">
-            <h2 className="text-3xl font-bold gold-text tracking-tight uppercase tracking-widest">Архив профессионального анализа</h2>
-            <div className="grid grid-cols-1 gap-6">
+          <div className="space-y-8">
+            <div className="bg-white rounded-2xl p-8 border border-teal-100 shadow-lg">
+              <h2 className="text-2xl font-bold teal-text mb-2">Архив профессионального анализа</h2>
+              <p className="text-gray-500">Изучите материалы для самостоятельной проработки</p>
+            </div>
+            <div className="grid grid-cols-1 gap-4">
               {TOPICS.map(topic => (
                 <div 
                   key={topic.id}
                   onClick={() => handleTopicSelect(topic)}
-                  className="bg-white/90 backdrop-blur-sm p-6 rounded-3xl border border-teal-200 flex items-center gap-6 cursor-pointer hover:border-amber-400 hover:shadow-lg transition-all shadow-md"
+                  className="bg-white p-5 rounded-xl border border-teal-100 flex items-center gap-4 cursor-pointer hover:border-teal-300 hover:shadow-lg transition-all shadow-md"
                 >
-                  <span className="text-4xl p-4 bg-amber-50 rounded-2xl">{topic.icon}</span>
+                  <div className="w-14 h-14 bg-teal-50 rounded-full flex items-center justify-center text-teal-500 text-2xl">
+                    {topic.icon}
+                  </div>
                   <div>
-                    <h3 className="font-bold gold-text text-xl">{topic.title}</h3>
-                    <p className="text-sm gold-text-light font-medium mt-1">{topic.description}</p>
+                    <h3 className="font-semibold teal-text">{topic.title}</h3>
+                    <p className="text-sm text-gray-500">{topic.description}</p>
                   </div>
                 </div>
               ))}
@@ -74,10 +79,12 @@ const App: React.FC = () => {
         );
       case AppView.JOURNAL:
         return (
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-16 border border-teal-200 shadow-lg text-center">
-            <div className="text-7xl mb-8">📓</div>
-            <h2 className="text-3xl font-bold gold-text mb-4 tracking-tight uppercase">Дневник рефлексии</h2>
-            <p className="gold-text-light text-lg font-medium max-w-md mx-auto">Инструмент самоанализа будет доступен после завершения первичного 40-дневного протокола ТЭС.</p>
+          <div className="bg-white rounded-2xl p-12 border border-teal-100 shadow-lg text-center">
+            <div className="w-20 h-20 mx-auto mb-6 bg-teal-50 rounded-full flex items-center justify-center">
+              <span className="text-4xl">📓</span>
+            </div>
+            <h2 className="text-2xl font-bold teal-text mb-4">Дневник рефлексии</h2>
+            <p className="text-gray-500 max-w-md mx-auto">Инструмент самоанализа будет доступен после завершения первичного 40-дневного протокола ТЭС.</p>
           </div>
         );
       default:
