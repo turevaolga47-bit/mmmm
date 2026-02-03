@@ -20,7 +20,6 @@ const Assistant: React.FC = () => {
     setInput('');
     setIsLoading(true);
 
-    // Placeholder response
     setTimeout(() => {
       const botMessage: ChatMessage = {
         role: 'model',

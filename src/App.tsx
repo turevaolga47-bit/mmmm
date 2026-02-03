@@ -33,11 +33,7 @@ const App: React.FC = () => {
   const renderContent = () => {
     switch (activeView) {
       case AppView.DASHBOARD:
-        return (
-          <div>
-            <Dashboard onTopicSelect={handleTopicSelect} onNavigate={setActiveView} />
-          </div>
-        );
+        return <Dashboard onTopicSelect={handleTopicSelect} onNavigate={setActiveView} />;
       case AppView.CHAT:
         return <Assistant />;
       case AppView.EXERCISES:
@@ -53,7 +49,7 @@ const App: React.FC = () => {
         }
         return (
           <div className="space-y-10">
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight uppercase tracking-widest">Архив профессионального анализа</h2>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight uppercase">Архив профессионального анализа</h2>
             <div className="grid grid-cols-1 gap-6">
               {TOPICS.map(topic => (
                 <div 
@@ -73,7 +69,7 @@ const App: React.FC = () => {
         );
       case AppView.JOURNAL:
         return (
-          <div className="bg-white rounded-[3rem] p-16 border border-slate-200 shadow-sm text-center">
+          <div className="bg-white rounded-3xl p-16 border border-slate-200 shadow-sm text-center">
             <div className="text-7xl mb-8">📓</div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight uppercase">Дневник рефлексии</h2>
             <p className="text-slate-500 text-lg font-medium max-w-md mx-auto">Инструмент самоанализа будет доступен после завершения первичного 40-дневного протокола ТЭС.</p>
