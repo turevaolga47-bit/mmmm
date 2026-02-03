@@ -53,10 +53,10 @@ const StressTest: React.FC<StressTestProps> = ({ onBack }) => {
   };
 
   const getStressColor = (level: number): string => {
-    if (level <= 3) return 'text-green-600';
-    if (level <= 5) return 'text-yellow-600';
-    if (level <= 7) return 'text-orange-500';
-    return 'text-red-600';
+    if (level <= 3) return 'text-emerald-400';
+    if (level <= 5) return 'text-yellow-400';
+    if (level <= 7) return 'text-orange-400';
+    return 'text-red-400';
   };
 
   if (showResult) {
@@ -64,25 +64,25 @@ const StressTest: React.FC<StressTestProps> = ({ onBack }) => {
       <div className="space-y-6">
         <button
           onClick={onBack}
-          className="text-slate-600 hover:text-slate-900 flex items-center gap-2"
+          className="text-teal-200/70 hover:text-white flex items-center gap-2 transition-colors"
         >
           ← Назад
         </button>
 
-        <div className="bg-white rounded-2xl p-8 border border-slate-200 text-center">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">Результат теста</h2>
+        <div className="bg-teal-700/50 backdrop-blur-sm rounded-2xl p-8 border border-teal-500/30 text-center shadow-xl">
+          <h2 className="text-2xl font-bold text-white mb-6">Результат теста</h2>
           
           <div className="mb-8">
             <div className={`text-7xl font-bold ${getStressColor(stressLevel)} mb-4`}>
               {stressLevel}/10
             </div>
-            <p className="text-lg text-slate-600">{getStressDescription(stressLevel)}</p>
+            <p className="text-lg text-teal-100/90">{getStressDescription(stressLevel)}</p>
           </div>
 
-          <div className="w-full bg-slate-100 rounded-full h-4 mb-8">
+          <div className="w-full bg-teal-900/50 rounded-full h-4 mb-8">
             <div 
               className={`h-4 rounded-full transition-all ${
-                stressLevel <= 3 ? 'bg-green-500' :
+                stressLevel <= 3 ? 'bg-emerald-500' :
                 stressLevel <= 5 ? 'bg-yellow-500' :
                 stressLevel <= 7 ? 'bg-orange-500' : 'bg-red-500'
               }`}
@@ -91,13 +91,13 @@ const StressTest: React.FC<StressTestProps> = ({ onBack }) => {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 border border-slate-200">
-          <h3 className="text-xl font-bold text-slate-900 mb-6">Рекомендации для выхода из стресса</h3>
+        <div className="bg-teal-700/50 backdrop-blur-sm rounded-2xl p-8 border border-teal-500/30 shadow-xl">
+          <h3 className="text-xl font-bold text-white mb-6">Рекомендации для выхода из стресса</h3>
           
           <div className="space-y-6">
-            <div className="p-5 bg-slate-50 rounded-xl border-l-4 border-slate-800">
-              <h4 className="font-bold text-slate-900 mb-2">👤 Личная консультация</h4>
-              <p className="text-slate-600 text-sm mb-3">
+            <div className="p-5 bg-teal-800/50 rounded-xl border-l-4 border-white">
+              <h4 className="font-bold text-white mb-2">👤 Личная консультация</h4>
+              <p className="text-teal-100/80 text-sm mb-3">
                 Получите профессиональную поддержку от кризисного психолога {EXPERT_INFO.name}. 
                 Индивидуальный разбор вашей ситуации и план восстановления.
               </p>
@@ -105,41 +105,41 @@ const StressTest: React.FC<StressTestProps> = ({ onBack }) => {
                 href={EXPERT_INFO.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-700 transition-colors"
+                className="inline-block bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-teal-400 hover:to-cyan-400 transition-all shadow-lg"
               >
                 Записаться на консультацию
               </a>
             </div>
 
-            <div className="p-5 bg-slate-50 rounded-xl border-l-4 border-blue-500">
-              <h4 className="font-bold text-slate-900 mb-2">🧘 40-дневный протокол ТЭС</h4>
-              <p className="text-slate-600 text-sm">
+            <div className="p-5 bg-teal-800/50 rounded-xl border-l-4 border-cyan-400">
+              <h4 className="font-bold text-white mb-2">🧘 40-дневный протокол ТЭС</h4>
+              <p className="text-teal-100/80 text-sm">
                 Попробуйте Технику Эмоциональной Свободы. Всего 2–5 минут в день в течение 40 дней — 
                 и вы начнёте замечать, как стресс уходит малыми порциями, день за днём.
               </p>
             </div>
 
-            <div className="p-5 bg-slate-50 rounded-xl border-l-4 border-purple-500">
-              <h4 className="font-bold text-slate-900 mb-2">📱 Канал «Секреты Женской Энергии»</h4>
-              <p className="text-slate-600 text-sm mb-3">
+            <div className="p-5 bg-teal-800/50 rounded-xl border-l-4 border-purple-400">
+              <h4 className="font-bold text-white mb-2">📱 Канал «Секреты Женской Энергии»</h4>
+              <p className="text-teal-100/80 text-sm mb-3">
                 Подписывайтесь на канал с ежедневными практиками, поддержкой и вдохновением для женщин.
               </p>
               <a 
                 href={EXPERT_INFO.channelLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors"
+                className="inline-block bg-purple-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-400 transition-all shadow-lg"
               >
                 Подписаться на канал
               </a>
             </div>
 
-            <div className="p-5 bg-gradient-to-r from-slate-900 to-slate-700 rounded-xl text-white">
+            <div className="p-5 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-xl text-white shadow-lg">
               <h4 className="font-bold mb-2">✨ {EXPERT_INFO.clubName}</h4>
-              <p className="text-slate-200 text-sm mb-4">
+              <p className="text-teal-100 text-sm mb-4">
                 {EXPERT_INFO.clubDescription}
               </p>
-              <p className="text-slate-300 text-sm mb-4">
+              <p className="text-teal-100/80 text-sm mb-4">
                 Если вы готовы расстаться с состоянием стресса и начать жить счастливой жизнью — 
                 это место для вас. Для вступления стучитесь в личку к {EXPERT_INFO.name}.
               </p>
@@ -147,7 +147,7 @@ const StressTest: React.FC<StressTestProps> = ({ onBack }) => {
                 href={EXPERT_INFO.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors"
+                className="inline-block bg-white text-teal-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-teal-50 transition-all"
               >
                 Написать в Telegram
               </a>
@@ -157,7 +157,7 @@ const StressTest: React.FC<StressTestProps> = ({ onBack }) => {
 
         <button
           onClick={() => { setShowResult(false); setAnswers({}); }}
-          className="w-full bg-slate-100 text-slate-700 py-3 rounded-xl font-medium hover:bg-slate-200 transition-colors"
+          className="w-full bg-teal-800/50 text-white py-3 rounded-xl font-medium hover:bg-teal-700/60 transition-colors border border-teal-500/30"
         >
           Пройти тест заново
         </button>
@@ -169,22 +169,22 @@ const StressTest: React.FC<StressTestProps> = ({ onBack }) => {
     <div className="space-y-6">
       <button
         onClick={onBack}
-        className="text-slate-600 hover:text-slate-900 flex items-center gap-2"
+        className="text-teal-200/70 hover:text-white flex items-center gap-2 transition-colors"
       >
         ← Назад
       </button>
 
-      <div className="bg-white rounded-2xl p-8 border border-slate-200">
-        <h2 className="text-2xl font-bold text-slate-900 mb-2">Мониторинг стресса</h2>
-        <p className="text-slate-600">
+      <div className="bg-gradient-to-br from-teal-600/90 to-cyan-600/90 backdrop-blur-sm rounded-2xl p-8 border border-teal-400/30 shadow-xl">
+        <h2 className="text-2xl font-bold text-white mb-2">Мониторинг стресса</h2>
+        <p className="text-teal-100">
           Ответьте на 10 вопросов, чтобы определить ваш уровень стресса по шкале от 1 до 10.
         </p>
       </div>
 
       <div className="space-y-4">
         {QUESTIONS.map((question, index) => (
-          <div key={question.id} className="bg-white rounded-xl p-6 border border-slate-200">
-            <p className="font-medium text-slate-900 mb-4">
+          <div key={question.id} className="bg-teal-700/50 backdrop-blur-sm rounded-xl p-6 border border-teal-500/30 shadow-lg">
+            <p className="font-medium text-white mb-4">
               {index + 1}. {question.text}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -192,10 +192,10 @@ const StressTest: React.FC<StressTestProps> = ({ onBack }) => {
                 <button
                   key={answer.value}
                   onClick={() => handleAnswer(question.id, answer.value)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     answers[question.id] === answer.value
-                      ? 'bg-slate-900 text-white'
-                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                      ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-lg'
+                      : 'bg-teal-800/50 text-teal-100 hover:bg-teal-700/60 border border-teal-500/30'
                   }`}
                 >
                   {answer.label}
@@ -206,17 +206,17 @@ const StressTest: React.FC<StressTestProps> = ({ onBack }) => {
         ))}
       </div>
 
-      <div className="text-center text-sm text-slate-500">
+      <div className="text-center text-sm text-teal-200/70">
         Отвечено: {Object.keys(answers).length} из {QUESTIONS.length}
       </div>
 
       <button
         onClick={() => setShowResult(true)}
         disabled={!allAnswered}
-        className={`w-full py-4 rounded-xl font-semibold transition-colors ${
+        className={`w-full py-4 rounded-xl font-semibold transition-all ${
           allAnswered
-            ? 'bg-slate-900 text-white hover:bg-slate-700'
-            : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+            ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white hover:from-teal-400 hover:to-cyan-400 shadow-lg'
+            : 'bg-teal-800/30 text-teal-400/50 cursor-not-allowed border border-teal-500/20'
         }`}
       >
         Узнать результат
