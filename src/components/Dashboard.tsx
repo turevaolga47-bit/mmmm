@@ -13,7 +13,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
       <section className="bg-gradient-to-br from-teal-600/90 to-cyan-600/90 backdrop-blur-sm rounded-2xl p-8 border border-teal-400/30 shadow-xl">
         <h2 className="text-2xl font-bold text-white mb-2">Добро пожаловать</h2>
         <p className="text-teal-100">
-          Персональный ассистент по Технике Эмоциональной Свободы от {EXPERT_INFO.name}
+          Персональный ассистент по Технике Эмоциональной Свободы
         </p>
       </section>
 
