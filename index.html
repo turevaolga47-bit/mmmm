@@ -10,21 +10,29 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+            background: linear-gradient(135deg, 
+              hsl(180, 50%, 15%) 0%, 
+              hsl(174, 60%, 20%) 25%,
+              hsl(170, 55%, 18%) 50%,
+              hsl(176, 65%, 22%) 75%,
+              hsl(180, 50%, 17%) 100%
+            );
+            background-attachment: fixed;
+            min-height: 100vh;
             -webkit-font-smoothing: antialiased;
         }
         ::-webkit-scrollbar {
           width: 8px;
         }
         ::-webkit-scrollbar-track {
-          background: #f1f5f9;
+          background: hsl(174, 40%, 15%);
         }
         ::-webkit-scrollbar-thumb {
-          background: #cbd5e1;
+          background: hsl(174, 50%, 35%);
           border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-          background: #94a3b8;
+          background: hsl(174, 60%, 45%);
         }
     </style>
 <script type="importmap">
