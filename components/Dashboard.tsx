@@ -9,73 +9,81 @@ interface DashboardProps {
 }
 
 const topicIcons: Record<string, React.ReactNode> = {
-  'anxiety': <Compass className="icon-float" size={32} />,
-  'burnout': <Scale className="icon-pulse" size={32} />,
-  'stress': <Diamond className="icon-spin" size={32} />,
-  'fatigue': <Clock className="icon-bounce" size={32} />,
-  'self-understanding': <PenTool className="icon-float" size={32} />,
-  'stress-test': <BarChart3 className="icon-pulse" size={32} />,
+  'anxiety': <Compass className="icon-float" size={28} />,
+  'burnout': <Scale className="icon-pulse" size={28} />,
+  'stress': <Diamond className="icon-spin" size={28} />,
+  'fatigue': <Clock className="icon-bounce" size={28} />,
+  'self-understanding': <PenTool className="icon-float" size={28} />,
+  'stress-test': <BarChart3 className="icon-pulse" size={28} />,
 };
 
 const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
   return (
     <div className="space-y-8">
-      <section className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-teal-200 shadow-lg">
-        <h2 className="text-2xl font-bold gold-text mb-2">Добро пожаловать</h2>
-        <p className="gold-text-light">
+      <section className="bg-white rounded-2xl p-8 border border-teal-100 shadow-lg">
+        <h2 className="text-2xl font-bold teal-text mb-2">Добро пожаловать</h2>
+        <p className="teal-text-light">
           Персональный ассистент по Технике Эмоциональной Свободы
         </p>
       </section>
 
       <section>
-        <h3 className="text-lg font-semibold gold-text mb-4">Быстрый доступ</h3>
+        <h3 className="text-lg font-semibold teal-text mb-4">Быстрый доступ</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <button
             onClick={() => onNavigate(AppView.CHAT)}
-            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md group"
+            className="bg-white p-6 rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <MessageCircle className="mx-auto mb-2 icon-float text-amber-500" size={32} />
-            <span className="text-sm font-medium gold-text-light">Консультация</span>
+            <div className="w-14 h-14 mx-auto mb-3 bg-teal-50 rounded-full flex items-center justify-center">
+              <MessageCircle className="icon-float text-teal-500" size={28} />
+            </div>
+            <span className="text-sm font-medium teal-text">Консультация</span>
           </button>
           <button
             onClick={() => onNavigate(AppView.EXERCISES)}
-            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md group"
+            className="bg-white p-6 rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <Dumbbell className="mx-auto mb-2 icon-pulse text-amber-500" size={32} />
-            <span className="text-sm font-medium gold-text-light">Упражнения</span>
+            <div className="w-14 h-14 mx-auto mb-3 bg-teal-50 rounded-full flex items-center justify-center">
+              <Dumbbell className="icon-pulse text-teal-500" size={28} />
+            </div>
+            <span className="text-sm font-medium teal-text">Упражнения</span>
           </button>
           <button
             onClick={() => onNavigate(AppView.EDUCATION)}
-            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md group"
+            className="bg-white p-6 rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <Archive className="mx-auto mb-2 icon-bounce text-amber-500" size={32} />
-            <span className="text-sm font-medium gold-text-light">Архив</span>
+            <div className="w-14 h-14 mx-auto mb-3 bg-teal-50 rounded-full flex items-center justify-center">
+              <Archive className="icon-bounce text-teal-500" size={28} />
+            </div>
+            <span className="text-sm font-medium teal-text">Архив</span>
           </button>
           <button
             onClick={() => onNavigate(AppView.EXPERT)}
-            className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border border-teal-200 hover:border-amber-400 hover:shadow-lg transition-all text-center shadow-md group"
+            className="bg-white p-6 rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <User className="mx-auto mb-2 icon-spin text-amber-500" size={32} />
-            <span className="text-sm font-medium gold-text-light">Эксперт</span>
+            <div className="w-14 h-14 mx-auto mb-3 bg-teal-50 rounded-full flex items-center justify-center">
+              <User className="icon-spin text-teal-500" size={28} />
+            </div>
+            <span className="text-sm font-medium teal-text">Эксперт</span>
           </button>
         </div>
       </section>
 
       <section>
-        <h3 className="text-lg font-semibold gold-text mb-4">Темы для проработки</h3>
+        <h3 className="text-lg font-semibold teal-text mb-4">Темы для проработки</h3>
         <div className="grid gap-4">
           {TOPICS.slice(0, 4).map(topic => (
             <div
               key={topic.id}
               onClick={() => onTopicSelect(topic)}
-              className="bg-white/90 backdrop-blur-sm p-5 rounded-xl border border-teal-200 flex items-center gap-4 cursor-pointer hover:border-amber-400 hover:shadow-lg transition-all shadow-md"
+              className="bg-white p-5 rounded-xl border border-teal-100 flex items-center gap-4 cursor-pointer hover:border-teal-300 hover:shadow-lg transition-all shadow-md"
             >
-              <div className="text-amber-500">
-                {topicIcons[topic.id] || <Diamond className="icon-float" size={32} />}
+              <div className="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center text-teal-500">
+                {topicIcons[topic.id] || <Diamond className="icon-float" size={28} />}
               </div>
               <div>
-                <h4 className="font-semibold gold-text">{topic.title}</h4>
-                <p className="text-sm gold-text-light">{topic.description}</p>
+                <h4 className="font-semibold teal-text">{topic.title}</h4>
+                <p className="text-sm text-gray-500">{topic.description}</p>
               </div>
             </div>
           ))}
