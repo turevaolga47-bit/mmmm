@@ -26,7 +26,14 @@ const App: React.FC = () => {
   const renderContent = () => {
     switch (activeView) {
       case AppView.DASHBOARD:
-        return <Dashboard onTopicSelect={handleTopicSelect} onNavigate={setActiveView} />;
+        return (
+          <div>
+            <div className="mb-6 p-4 bg-slate-100 border border-slate-300 rounded-lg text-center">
+              <p className="text-slate-800 font-medium">✓ Проект успешно запущен</p>
+            </div>
+            <Dashboard onTopicSelect={handleTopicSelect} onNavigate={setActiveView} />
+          </div>
+        );
       case AppView.CHAT:
         return <Assistant />;
       case AppView.EXERCISES:
