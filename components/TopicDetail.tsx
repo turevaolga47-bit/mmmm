@@ -20,30 +20,30 @@ const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
     <div className="space-y-6">
       <button
         onClick={onBack}
-        className="gold-text-light hover:text-amber-600 flex items-center gap-2 font-medium transition-colors"
+        className="text-gray-500 hover:text-teal-600 flex items-center gap-2 font-medium transition-colors"
       >
         <ArrowLeft size={18} />
         Назад
       </button>
 
-      <div className="bg-white/90 backdrop-blur-sm rounded-2xl border border-teal-200 p-8 shadow-lg">
+      <div className="bg-white rounded-2xl border border-teal-100 p-8 shadow-lg">
         <div className="flex items-center gap-4 mb-6">
-          <div className="text-amber-500">
+          <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center text-teal-500">
             {topicIcons[topic.id] || <Diamond className="icon-float" size={48} />}
           </div>
           <div>
-            <h1 className="text-2xl font-bold gold-text">{topic.title}</h1>
-            <p className="gold-text-light">{topic.description}</p>
+            <h1 className="text-2xl font-bold teal-text">{topic.title}</h1>
+            <p className="text-gray-500">{topic.description}</p>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <h3 className="font-semibold gold-text mb-3">Симптомы</h3>
+            <h3 className="font-semibold teal-text mb-3">Симптомы</h3>
             <ul className="space-y-2">
               {topic.symptoms.map((symptom, idx) => (
-                <li key={idx} className="flex items-center gap-2 gold-text-light">
-                  <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
+                <li key={idx} className="flex items-center gap-2 text-gray-600">
+                  <span className="w-2 h-2 bg-teal-400 rounded-full"></span>
                   {symptom}
                 </li>
               ))}
@@ -51,11 +51,11 @@ const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
           </div>
 
           <div>
-            <h3 className="font-semibold gold-text mb-3">Стратегии</h3>
+            <h3 className="font-semibold teal-text mb-3">Стратегии</h3>
             <ul className="space-y-2">
               {topic.strategies.map((strategy, idx) => (
-                <li key={idx} className="flex items-center gap-2 gold-text-light">
-                  <span className="w-2 h-2 bg-amber-500 rounded-full"></span>
+                <li key={idx} className="flex items-center gap-2 text-gray-600">
+                  <span className="w-2 h-2 bg-teal-500 rounded-full"></span>
                   {strategy}
                 </li>
               ))}
@@ -65,18 +65,18 @@ const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
       </div>
 
       {topic.tappingScript && (
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl border border-teal-200 p-8 shadow-lg">
-          <h2 className="text-xl font-bold gold-text mb-4">{topic.tappingScript.title}</h2>
+        <div className="bg-white rounded-2xl border border-teal-100 p-8 shadow-lg">
+          <h2 className="text-xl font-bold teal-text mb-4">{topic.tappingScript.title}</h2>
           
-          <div className="mb-6 p-4 bg-amber-50/80 rounded-xl border border-amber-200">
-            <p className="text-sm font-medium gold-text mb-2">Установочная фраза:</p>
-            <p className="gold-text-light italic">{topic.tappingScript.setupPhrase}</p>
+          <div className="mb-6 p-4 bg-teal-50 rounded-xl border border-teal-100">
+            <p className="text-sm font-medium teal-text mb-2">Установочная фраза:</p>
+            <p className="text-gray-600 italic">{topic.tappingScript.setupPhrase}</p>
           </div>
 
-          <h3 className="font-semibold gold-text mb-3">Раунды тэппинга:</h3>
+          <h3 className="font-semibold teal-text mb-3">Раунды тэппинга:</h3>
           <div className="space-y-3">
             {topic.tappingScript.rounds.map((round, idx) => (
-              <div key={idx} className="p-3 bg-amber-50/60 rounded-lg gold-text-light border border-amber-100">
+              <div key={idx} className="p-3 bg-teal-50/60 rounded-lg text-gray-600 border border-teal-100">
                 {round}
               </div>
             ))}

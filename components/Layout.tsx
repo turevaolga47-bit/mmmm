@@ -19,13 +19,13 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, setActiveView }) 
 
   return (
     <div className="min-h-screen">
-      <header className="bg-white/90 backdrop-blur-sm border-b border-teal-200 sticky top-0 z-50 shadow-sm">
+      <header className="bg-white/95 backdrop-blur-sm border-b border-teal-100 sticky top-0 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-4">
-          <h1 className="text-xl font-bold gold-text tracking-tight">ВЫХОД ИЗ СТРЕССА за 5 минут</h1>
+          <h1 className="text-xl font-bold teal-text tracking-tight">ВЫХОД ИЗ СТРЕССА за 5 минут</h1>
         </div>
       </header>
       
-      <nav className="bg-white/80 backdrop-blur-sm border-b border-teal-200">
+      <nav className="bg-white/90 backdrop-blur-sm border-b border-teal-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex gap-1 overflow-x-auto">
             {navItems.map(item => (
@@ -34,11 +34,11 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, setActiveView }) 
                 onClick={() => setActiveView(item.view)}
                 className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors flex items-center gap-2 ${
                   activeView === item.view 
-                    ? 'gold-text border-b-2 border-amber-500' 
-                    : 'text-teal-600 hover:text-amber-600'
+                    ? 'teal-text border-b-2 border-teal-500' 
+                    : 'text-gray-500 hover:text-teal-600'
                 }`}
               >
-                <item.Icon size={18} className={activeView === item.view ? 'icon-bounce' : ''} />
+                <item.Icon size={18} className={activeView === item.view ? 'icon-bounce text-teal-500' : ''} />
                 {item.label}
               </button>
             ))}
