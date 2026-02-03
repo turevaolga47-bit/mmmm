@@ -15,9 +15,11 @@ const ExpertProfile: React.FC = () => {
             className="w-32 h-32 object-cover rounded-2xl shadow-lg border-4 border-teal-100"
           />
           <div>
-            <h1 className="text-2xl font-bold teal-text">{EXPERT_INFO.name}</h1>
+            <h1 className="text-2xl font-bold teal-text flex items-center gap-2">
+              <span>👩‍⚕️</span> {EXPERT_INFO.name}
+            </h1>
             <p className="text-gray-500">{EXPERT_INFO.title}</p>
-            <p className="text-sm text-gray-400 mt-1">{EXPERT_INFO.experience}</p>
+            <p className="text-sm text-gray-400 mt-1">🏆 {EXPERT_INFO.experience}</p>
             
             <div className="flex gap-3 mt-4">
               <a
@@ -44,31 +46,43 @@ const ExpertProfile: React.FC = () => {
       </div>
 
       <div className="bg-white rounded-2xl border border-teal-100 p-8 shadow-lg">
-        <h2 className="text-xl font-bold teal-text mb-4">{EXPERT_INFO.clubName}</h2>
+        <h2 className="text-xl font-bold teal-text mb-4 flex items-center gap-2">
+          <span>👑</span> {EXPERT_INFO.clubName}
+        </h2>
         <p className="text-gray-500">{EXPERT_INFO.clubDescription}</p>
       </div>
 
       <div className="bg-white rounded-2xl border border-teal-100 p-8 shadow-lg">
-        <h2 className="text-xl font-bold teal-text mb-6">О технике ТЭС</h2>
+        <h2 className="text-xl font-bold teal-text mb-6 flex items-center gap-2">
+          <span>🎓</span> О технике ТЭС
+        </h2>
         
         <div className="space-y-6">
-          <div>
-            <h3 className="font-semibold teal-text mb-2">История</h3>
+          <div className="bg-blue-50/50 rounded-xl p-5 border border-blue-100">
+            <h3 className="font-semibold teal-text mb-2 flex items-center gap-2">
+              <span>📜</span> История
+            </h3>
             <p className="text-gray-500">{EFT_DESCRIPTION.history}</p>
           </div>
           
-          <div>
-            <h3 className="font-semibold teal-text mb-2">Механизм действия</h3>
+          <div className="bg-purple-50/50 rounded-xl p-5 border border-purple-100">
+            <h3 className="font-semibold teal-text mb-2 flex items-center gap-2">
+              <span>⚙️</span> Механизм действия
+            </h3>
             <p className="text-gray-500">{EFT_DESCRIPTION.mechanism}</p>
           </div>
           
-          <div>
-            <h3 className="font-semibold teal-text mb-2">40-дневный протокол</h3>
+          <div className="bg-amber-50/50 rounded-xl p-5 border border-amber-100">
+            <h3 className="font-semibold teal-text mb-2 flex items-center gap-2">
+              <span>📅</span> 40-дневный протокол
+            </h3>
             <p className="text-gray-500">{EFT_DESCRIPTION.protocol40}</p>
           </div>
           
-          <div>
-            <h3 className="font-semibold teal-text mb-2">Результаты</h3>
+          <div className="bg-green-50/50 rounded-xl p-5 border border-green-100">
+            <h3 className="font-semibold teal-text mb-2 flex items-center gap-2">
+              <span>🏅</span> Результаты
+            </h3>
             <p className="text-gray-500">{EFT_DESCRIPTION.results}</p>
           </div>
         </div>
