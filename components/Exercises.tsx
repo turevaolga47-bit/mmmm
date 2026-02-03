@@ -3,11 +3,11 @@ import { Compass, Scale, Diamond, Clock, PenTool } from 'lucide-react';
 import { TOPICS } from '../constants';
 
 const topicIcons: Record<string, React.ReactNode> = {
-  'anxiety': <Compass className="icon-float" size={28} />,
-  'burnout': <Scale className="icon-pulse" size={28} />,
-  'stress': <Diamond className="icon-spin" size={28} />,
-  'fatigue': <Clock className="icon-bounce" size={28} />,
-  'self-understanding': <PenTool className="icon-float" size={28} />,
+  'anxiety': <Compass className="icon-float text-teal-500" size={28} strokeWidth={2.5} />,
+  'burnout': <Scale className="icon-pulse text-teal-500" size={28} strokeWidth={2.5} />,
+  'stress': <Diamond className="icon-spin text-teal-500" size={28} strokeWidth={2.5} />,
+  'fatigue': <Clock className="icon-bounce text-teal-500" size={28} strokeWidth={2.5} />,
+  'self-understanding': <PenTool className="icon-float text-teal-500" size={28} strokeWidth={2.5} />,
 };
 
 const Exercises: React.FC = () => {
@@ -24,8 +24,8 @@ const Exercises: React.FC = () => {
         {TOPICS.filter(t => t.tappingScript).map(topic => (
           <div key={topic.id} className="bg-white rounded-xl border border-teal-100 overflow-hidden shadow-md">
             <div className="p-5 flex items-center gap-4">
-              <div className="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center text-teal-500">
-                {topicIcons[topic.id] || <Diamond className="icon-float" size={28} />}
+              <div className="w-12 h-12 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full flex items-center justify-center shadow-sm">
+                {topicIcons[topic.id] || <Diamond className="icon-float text-teal-500" size={28} strokeWidth={2.5} />}
               </div>
               <div className="flex-1">
                 <h3 className="font-semibold teal-text">{topic.tappingScript?.title}</h3>
