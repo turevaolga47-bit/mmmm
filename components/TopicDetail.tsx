@@ -8,11 +8,11 @@ interface TopicDetailProps {
 }
 
 const topicIcons: Record<string, React.ReactNode> = {
-  'anxiety': <Compass className="icon-float" size={48} />,
-  'burnout': <Scale className="icon-pulse" size={48} />,
-  'stress': <Diamond className="icon-spin" size={48} />,
-  'fatigue': <Clock className="icon-bounce" size={48} />,
-  'self-understanding': <PenTool className="icon-float" size={48} />,
+  'anxiety': <Compass className="icon-float text-teal-500" size={48} strokeWidth={2.5} />,
+  'burnout': <Scale className="icon-pulse text-teal-500" size={48} strokeWidth={2.5} />,
+  'stress': <Diamond className="icon-spin text-teal-500" size={48} strokeWidth={2.5} />,
+  'fatigue': <Clock className="icon-bounce text-teal-500" size={48} strokeWidth={2.5} />,
+  'self-understanding': <PenTool className="icon-float text-teal-500" size={48} strokeWidth={2.5} />,
 };
 
 const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
@@ -28,8 +28,8 @@ const TopicDetail: React.FC<TopicDetailProps> = ({ topic, onBack }) => {
 
       <div className="bg-white rounded-2xl border border-teal-100 p-8 shadow-lg">
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center text-teal-500">
-            {topicIcons[topic.id] || <Diamond className="icon-float" size={48} />}
+          <div className="w-16 h-16 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full flex items-center justify-center shadow-sm">
+            {topicIcons[topic.id] || <Diamond className="icon-float text-teal-500" size={48} strokeWidth={2.5} />}
           </div>
           <div>
             <h1 className="text-2xl font-bold teal-text">{topic.title}</h1>

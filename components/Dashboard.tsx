@@ -9,12 +9,12 @@ interface DashboardProps {
 }
 
 const topicIcons: Record<string, React.ReactNode> = {
-  'anxiety': <Compass className="icon-float" size={28} />,
-  'burnout': <Scale className="icon-pulse" size={28} />,
-  'stress': <Diamond className="icon-spin" size={28} />,
-  'fatigue': <Clock className="icon-bounce" size={28} />,
-  'self-understanding': <PenTool className="icon-float" size={28} />,
-  'stress-test': <BarChart3 className="icon-pulse" size={28} />,
+  'anxiety': <Compass className="icon-float text-teal-500" size={28} strokeWidth={2.5} />,
+  'burnout': <Scale className="icon-pulse text-teal-500" size={28} strokeWidth={2.5} />,
+  'stress': <Diamond className="icon-spin text-teal-500" size={28} strokeWidth={2.5} />,
+  'fatigue': <Clock className="icon-bounce text-teal-500" size={28} strokeWidth={2.5} />,
+  'self-understanding': <PenTool className="icon-float text-teal-500" size={28} strokeWidth={2.5} />,
+  'stress-test': <BarChart3 className="icon-pulse text-teal-500" size={28} strokeWidth={2.5} />,
 };
 
 const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
@@ -34,8 +34,8 @@ const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
             onClick={() => onNavigate(AppView.CHAT)}
             className="bg-white p-6 rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <div className="w-14 h-14 mx-auto mb-3 bg-teal-50 rounded-full flex items-center justify-center">
-              <MessageCircle className="icon-float text-teal-500" size={28} />
+            <div className="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full flex items-center justify-center shadow-sm">
+              <MessageCircle className="icon-float text-teal-500" size={28} strokeWidth={2.5} />
             </div>
             <span className="text-sm font-medium teal-text">Консультация</span>
           </button>
@@ -43,8 +43,8 @@ const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
             onClick={() => onNavigate(AppView.EXERCISES)}
             className="bg-white p-6 rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <div className="w-14 h-14 mx-auto mb-3 bg-teal-50 rounded-full flex items-center justify-center">
-              <Dumbbell className="icon-pulse text-teal-500" size={28} />
+            <div className="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full flex items-center justify-center shadow-sm">
+              <Dumbbell className="icon-pulse text-teal-500" size={28} strokeWidth={2.5} />
             </div>
             <span className="text-sm font-medium teal-text">Упражнения</span>
           </button>
@@ -52,8 +52,8 @@ const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
             onClick={() => onNavigate(AppView.EDUCATION)}
             className="bg-white p-6 rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <div className="w-14 h-14 mx-auto mb-3 bg-teal-50 rounded-full flex items-center justify-center">
-              <Archive className="icon-bounce text-teal-500" size={28} />
+            <div className="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full flex items-center justify-center shadow-sm">
+              <Archive className="icon-bounce text-teal-500" size={28} strokeWidth={2.5} />
             </div>
             <span className="text-sm font-medium teal-text">Архив</span>
           </button>
@@ -61,8 +61,8 @@ const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
             onClick={() => onNavigate(AppView.EXPERT)}
             className="bg-white p-6 rounded-xl border border-teal-100 hover:border-teal-300 hover:shadow-lg transition-all text-center shadow-md group"
           >
-            <div className="w-14 h-14 mx-auto mb-3 bg-teal-50 rounded-full flex items-center justify-center">
-              <User className="icon-spin text-teal-500" size={28} />
+            <div className="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full flex items-center justify-center shadow-sm">
+              <User className="icon-spin text-teal-500" size={28} strokeWidth={2.5} />
             </div>
             <span className="text-sm font-medium teal-text">Эксперт</span>
           </button>
@@ -78,8 +78,8 @@ const Dashboard: React.FC<DashboardProps> = ({ onTopicSelect, onNavigate }) => {
               onClick={() => onTopicSelect(topic)}
               className="bg-white p-5 rounded-xl border border-teal-100 flex items-center gap-4 cursor-pointer hover:border-teal-300 hover:shadow-lg transition-all shadow-md"
             >
-              <div className="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center text-teal-500">
-                {topicIcons[topic.id] || <Diamond className="icon-float" size={28} />}
+              <div className="w-12 h-12 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full flex items-center justify-center text-teal-500 shadow-sm">
+                {topicIcons[topic.id] || <Diamond className="icon-float" size={28} strokeWidth={2.5} />}
               </div>
               <div>
                 <h4 className="font-semibold teal-text">{topic.title}</h4>

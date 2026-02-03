@@ -7,8 +7,8 @@ const ExpertProfile: React.FC = () => {
     <div className="space-y-8">
       <div className="bg-white rounded-2xl border border-teal-100 p-8 shadow-lg">
         <div className="flex items-start gap-6">
-          <div className="w-24 h-24 bg-teal-50 rounded-full flex items-center justify-center border-2 border-teal-200 shadow-md">
-            <User className="icon-pulse text-teal-500" size={48} />
+          <div className="w-24 h-24 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full flex items-center justify-center border-2 border-teal-200 shadow-md">
+            <User className="icon-pulse text-teal-500" size={48} strokeWidth={2.5} />
           </div>
           <div>
             <h1 className="text-2xl font-bold teal-text">{EXPERT_INFO.name}</h1>
